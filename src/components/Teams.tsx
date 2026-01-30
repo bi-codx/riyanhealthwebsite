@@ -16,7 +16,7 @@ const teamMembers = [
     name: "Fadillilah Alhassan",
     title: "CO-FOUNDER",
     image:
-      "https://res.cloudinary.com/dtl9mw6kp/image/upload/v1763845634/IMG_0074_pqfeyo.jpg",
+      "https://res.cloudinary.com/dtl9mw6kp/image/upload/v1764247375/IMG_0022_okgu6k_474c92.jpg",
     bio: "Head of Research & Analytics at RYN Solutions. Board-certified in Data Science. BSc Biological Sciences from KNUST. Passionate about creating intuitive data-centered healthcare solutions",
     affiliations: ["KNUST", "RYN SOLUTIONS"],
   },

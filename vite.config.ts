@@ -4,7 +4,7 @@
   import path from 'path';
 
 export default defineConfig({
-  base: '/riyanhealthwebsite/', // <--- CHANGE THIS to your actual repo name with slashes
+  base: '/', // <--- CHANGE THIS to your actual repo name with slashes
   plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

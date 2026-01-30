@@ -12,7 +12,7 @@ import { Footer } from './components/Footer'; // Import the new footer
 import { Toaster } from 'sonner@2.0.3';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('/');
+  const [currentPage, setCurrentPage] = useState(window.location.pathname === '/' || window.location.pathname === '' ? '/' : window.location.pathname);
 
   useEffect(() => {
     // Handle custom navigation events
