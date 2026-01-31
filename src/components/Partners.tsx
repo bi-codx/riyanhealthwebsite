@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const partners = [
+export const partners = [
   {
     name: 'SDG Solution Space',
     icon: 'https://res.cloudinary.com/dtl9mw6kp/image/upload/v1763387303/SGD_Solution_Space_qhxd8s.png',

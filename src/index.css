@@ -232,6 +232,9 @@
     letter-spacing: inherit;
     color: inherit;
     opacity: 1;
+    --lightningcss-light: initial;
+    --lightningcss-dark: ;
+    color-scheme: light;
     background-color: #0000;
     border-radius: 0;
   }
@@ -243,6 +246,9 @@
     letter-spacing: inherit;
     color: inherit;
     opacity: 1;
+    --lightningcss-light: initial;
+    --lightningcss-dark: ;
+    color-scheme: light;
     background-color: #0000;
     border-radius: 0;
   }
@@ -723,10 +729,6 @@
     height: calc(var(--spacing) * 32);
   }
 
-  .h-\[38vh\] {
-    height: 38vh;
-  }
-
   .h-\[400px\] {
     height: 400px;
   }
@@ -743,16 +745,8 @@
     height: 100vh;
   }
 
-  .max-h-\[420px\] {
-    max-height: 420px;
-  }
-
   .max-h-full {
     max-height: 100%;
-  }
-
-  .min-h-\[280px\] {
-    min-height: 280px;
   }
 
   .min-h-screen {
@@ -1048,6 +1042,10 @@
 
   .bg-background {
     background-color: var(--background);
+  }
+
+  .bg-black {
+    background-color: var(--color-black);
   }
 
   .bg-black\/30 {
@@ -1573,6 +1571,46 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:from-black\/65:is(:where(.group):hover *) {
+      --tw-gradient-from: #000000a6;
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .group-hover\:from-black\/65:is(:where(.group):hover *) {
+        --tw-gradient-from: color-mix(in oklab, var(--color-black) 65%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:via-black\/30:is(:where(.group):hover *) {
+      --tw-gradient-via: #0000004d;
+      --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .group-hover\:via-black\/30:is(:where(.group):hover *) {
+        --tw-gradient-via: color-mix(in oklab, var(--color-black) 30%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:to-black\/10:is(:where(.group):hover *) {
+      --tw-gradient-to: #0000001a;
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .group-hover\:to-black\/10:is(:where(.group):hover *) {
+        --tw-gradient-to: color-mix(in oklab, var(--color-black) 10%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:text-\[var\(--riyan-primary-accent\)\]:is(:where(.group):hover *) {
       color: var(--riyan-primary-accent);
     }
@@ -1780,24 +1818,6 @@
   }
 
   @media (width >= 40rem) {
-    .sm\:h-\[50vh\] {
-      height: 50vh;
-    }
-  }
-
-  @media (width >= 40rem) {
-    .sm\:max-h-\[550px\] {
-      max-height: 550px;
-    }
-  }
-
-  @media (width >= 40rem) {
-    .sm\:min-h-\[400px\] {
-      min-height: 400px;
-    }
-  }
-
-  @media (width >= 40rem) {
     .sm\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1824,24 +1844,6 @@
   @media (width >= 48rem) {
     .md\:mb-8 {
       margin-bottom: calc(var(--spacing) * 8);
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:h-screen {
-      height: 100vh;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:max-h-\[900px\] {
-      max-height: 900px;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:min-h-\[650px\] {
-      min-height: 650px;
     }
   }
 

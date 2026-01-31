@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react"; // Standardized import
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { partners } from "./Partners";
 
 /* -------------------------
   Helpers & small utilities
@@ -245,13 +246,6 @@ const leadershipTeam = [
     bio: 'Quality control officer at Pharmanova. Bio-medical Scientist. Bsc Biochemistry from KNUST. Former Teaching and Research Assistant.',
     affiliations: ['KNUST', 'Pharmanova']
   },
-];
-
-const partners = [
-  'University  of Geneva SDG Solution Space',
-  'KNUST',
-  'RYN Solutions',
-  'Kumasi Hive',
 ];
 
 export function AboutUs() {
@@ -710,7 +704,7 @@ export function AboutUs() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
             {partners.map((partner, index) => (
               <motion.div
-                key={partner}
+                key={partner.name}
                 initial={{ opacity: 0, y: 40 }}
                 animate={
                   sectionsVisible.partners
@@ -722,13 +716,29 @@ export function AboutUs() {
                   duration: 0.8,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="flex items-center justify-center p-6 transition-all duration-300 hover:scale-105"
+                className="flex flex-col items-center justify-center p-6 transition-all duration-300 hover:scale-105 group"
                 style={{
-                  border: "1px solid var(--border)", // Updated color
+                  border: "1px solid var(--border)",
                   borderRadius: "8px",
-                  minHeight: "120px",
+                  minHeight: "160px",
                 }}
               >
+                <div
+                  className="mb-4 transition-all duration-300 group-hover:scale-110"
+                  style={{
+                    height: "60px",
+                    width: "60px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <ImageWithFallback
+                    src={partner.icon}
+                    alt={partner.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
                 <p
                   className="text-center"
                   style={{
@@ -740,7 +750,7 @@ export function AboutUs() {
                     opacity: 0.7,
                   }}
                 >
-                  {partner}
+                  {partner.name}
                 </p>
               </motion.div>
             ))}
