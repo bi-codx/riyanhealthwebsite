@@ -9,7 +9,7 @@ import { ContactUs } from './components/ContactUs';
 import { InvestorsPartners } from './components/InvestorsPartners';
 import { Blog } from './components/Blog';
 import { Footer } from './components/Footer'; // Import the new footer
-import { Toaster } from 'sonner@2.0.3';
+import { Toaster } from 'sonner';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('/');
